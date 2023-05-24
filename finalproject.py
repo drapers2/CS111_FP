@@ -4,6 +4,9 @@ win = GraphWin("game_window", 400, 400)
 
 class Squirrel:
 
+
+    
+
     right_ear = Polygon(Point(135, 50), Point(140, 70), Point(120, 70))
     right_ear.setFill("Dark Gray")
     right_ear.draw(win)
