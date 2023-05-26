@@ -1,5 +1,6 @@
 from graphics import *
 import time
+import button
 
 win = GraphWin("game_window", 400, 400)
 
@@ -56,27 +57,44 @@ class Squirrel:
         self.left_mouth.draw(win)
         self.right_mouth.draw(win)
 
-Squirrel1= Squirrel("green")
-Squirrel1.draw(win)
+def draw_wait(variable):
+   variable.draw(win)
+   time.sleep(3)
+   variable.undraw()
+# Squirrel1= Squirrel("green")
+# Squirrel1.draw(win)
 
 
 welcome = Text(Point(250, 300), "Welcome to **Game Name**! \n You are a Carleton Student in CS111!")
-welcome.draw(win)
+draw_wait(welcome)
 
-input("Choose option one through 4:")
-time.sleep(3)
-welcome.undraw()
 
-explain= Text(Point(250, 300), "Your objective is to get from Davis to Dacie Moses!")
-explain.draw(win)
+
+
+explain= Text(Point(250, 300), "Your objective is to get from Davis to Dacie Moses \n to bake cookies for your CS111 professor!")
+draw_wait(explain)
+explain= Text(Point(250, 300), "If you don't bring him cookies, you'll fail your project!")
+draw_wait(explain)
+explain= Text(Point(250, 300), "But 4 squirrel guards are intent on stopping you!\n What time of day will you venture?")
+draw_wait(explain)
+
+morning= button.Button(Point(50, 150), "Morning")
+morning.draw(win)
+afternoon= button.Button(Point(50, 200), "Afternoon")
+afternoon.draw(win)
+evening= button.Button(Point(50, 250), "Evening")
+evening.draw(win)
+night= button.Button(Point(50, 300), "Night")
+night.draw(win)
+
+
+
+
+
+
 
 
 
     
 
-
-
-# squirrel_image = Image(Point(200,200), "squirrelppm.ppm")
-# squirrel_image.draw(win)
-# #win.mainloop()
 win.getMouse()
